@@ -32,6 +32,12 @@ func main() {
 
 		// Set the content type header and write the JSON response
 		w.Header().Set("Content-Type", "application/json")
+
+		// Set the CORS headers to allow cross-origin requests
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
 		w.Write(jsonMessage)
 	})
 
